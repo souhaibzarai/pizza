@@ -3,7 +3,7 @@
 <body class="sub_page">
     <div class="hero_area">
         <div class="bg-box" style="background: linear-gradient(135deg, #030303, #696868)">
-        </div>www
+        </div>
 
         <!-- Header Section -->
         <header class="header_section">
