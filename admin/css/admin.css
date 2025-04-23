@@ -1,0 +1,56 @@
+/* Ensure the body and html fill the entire viewport */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make the sidebar take full height */
+#sidebar {
+  position: fixed;
+  /* Keep the sidebar fixed in place */
+  top: 0;
+  bottom: 0;
+  /* Extend to the bottom of the viewport */
+  left: 0;
+  width: 250px;
+  /* Adjust as needed */
+  background-color: #2c3e50;
+  /* Dark background color */
+  overflow-y: auto;
+  /* Enable scrolling if content exceeds height */
+  transition: all 0.3s;
+  /* Smooth transition for toggling */
+}
+
+/* Style for the sidebar links */
+#sidebar .nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+}
+
+#sidebar .nav-link.active {
+  background-color: #4a6984;
+  /* Active link background color */
+}
+
+#sidebar .nav-link:hover {
+  background-color: #4a6984;
+  /* Hover effect */
+}
+
+/* Optional: Responsive design for smaller screens */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 100%;
+    /* Expand to full width on small screens */
+  }
+}
+
+.btn {
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
