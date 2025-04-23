@@ -43,6 +43,9 @@
         case 'manage_users.php':
             $page_title = 'User Management';
             break;
+        case 'profile.php':
+            $page_title = 'My Profile';
+            break;
         default:
             $page_title = '';
     }
