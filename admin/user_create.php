@@ -90,7 +90,6 @@
     <link href="css/admin.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-    <?php include_once 'nav.php'; ?>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
