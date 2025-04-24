@@ -5,7 +5,7 @@
     function getTopMenuItems()
     {
         global $pdo;
-        $stmt = $pdo->query("SELECT * FROM menu_items ORDER BY sales_count DESC LIMIT 3");
+        $stmt = $pdo->query("SELECT * FROM menu_items ORDER BY created_at DESC LIMIT 3");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 

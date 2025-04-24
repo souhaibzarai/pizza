@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 23, 2025 at 06:43 AM
+-- Generation Time: Apr 24, 2025 at 05:13 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -116,37 +116,38 @@ CREATE TABLE `menu_items` (
   `discount` int(11) NOT NULL DEFAULT 0,
   `image_url` varchar(255) NOT NULL,
   `sales_count` int(11) DEFAULT 0,
-  `category_id` int(11) DEFAULT NULL
+  `category_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `menu_items`
 --
 
-INSERT INTO `menu_items` (`id`, `name`, `description`, `price`, `discount`, `image_url`, `sales_count`, `category_id`) VALUES
-(1, 'Pizza aux Fruits de Mer', 'La Pizza aux Fruits de Mer est une pizza savoureuse garnie d’une sauce tomate parfumée, d’un mélange de crevettes, calamars et moules sautés à l’ail, et recouverte de fromage fondant.', 200.00, 10, '../images/menu/f1.png', 150, 2),
-(2, 'Burger Maison', 'Le Burger Maison est un savoureux burger avec un steak de bœuf haché juteux dans un pain moelleux, garni de fromage cheddar, de rondelles de tomate.', 150.00, 30, '../images/menu/f2.png', 200, 1),
-(3, 'Pizza Napolitaine', 'La Pizza Napolitaine est une pizza traditionnelle à pâte fine, garnie de sauce tomate San Marzano, de mozzarella di bufala, de basilic frais et d\'huile d\'olive.', 170.00, 12, '../images/menu/f3.png', 0, 2),
-(4, 'Homemade Vegan Burgers', 'Homemade Vegan Burgers sont des burgers savoureux à base de haricots noirs ou de pois chiches écrasés, mélangés avec des flocons d\'avoine, des oignons, de l\'ail et des carottes', 120.00, 0, '../images/menu/f7.png', 9, 1),
-(5, 'Burger Fusion au Curry', 'Le Chicken Curry Delight Burger est un burger savoureux avec un poulet pané au curry, servi dans un pain moelleux avec une sauce au yaourt, de la salade, des tomates et de la coriandre.', 140.00, 4, '../images/menu/f7.png', 0, 1),
-(6, 'Buttery Tomato Pasta', 'Le Buttery Tomato Pasta est un plat de pâtes savoureux préparé avec des pâtes al dente enrobées de beurre, de tomates cerises sautées à l\'ail, de basilic frais et de parmesan.', 100.00, 0, '../images/menu/f9.png', 0, 4),
-(7, 'Burger BBQ recipe', 'Le Burger BBQ est fait de steak de bœuf, fromage cheddar, sauce BBQ, bacon, oignons caramélisés, cornichons, tomates et salade, le tout dans un pain à burger. C\'est un burger savoureux et généreux, parfait pour les amateurs de BBQ.', 130.00, 15, '../images/menu/Coffee-Rubbed-Burgers-with-BBQ-Sauce.jpg', 1, 1),
-(8, 'Barbecue Bacon Burger', 'Le Barbecue Bacon Burger est un burger garni de bacon croustillant, de viande hachée de bœuf, de fromage fondant, de salade, de tomates, et d\'oignons, le tout nappé d\'une sauce barbecue. Il est servi dans un pain burger classique.', 235.00, 8, '../images/menu/delicious-classic-beef-burger-with-cherry-tomatoes_23-2148290641.avif', 10, 1),
-(9, 'Donner burger BBQ', 'Le Donner Burger est un burger inspiré du Doner Kebab, composé de viande grillée (souvent de l\'agneau, du poulet ou du bœuf), de légumes frais comme la salade, les tomates et les oignons, avec des sauces (blanche et pimentée). Il est servi dans un pain burger ou pita, et parfois avec du fromage selon les préférences.', 180.00, 0, '../images/menu/bbq-burger-980x653.webp', 3, 1),
-(11, 'Pasta al limone', 'Pâtes légères et rafraîchissantes avec une sauce crémeuse au citron, parmesan et herbes fraîches pour une touche d’élégance.', 200.00, 0, '../images/menu/pasta1-removebg-preview.png', 0, 3),
-(12, 'Burger', 'Burger gourmet avec filet de poulet croustillant, légumes frais et sauce maison dans un pain brioche moelleux.', 150.00, 0, '../images/menu/f2.png', 0, 1),
-(13, 'Frite à l\'ail', 'Frites dorées et croustillantes parfumées à l\'ail frais et saupoudrées de persil pour un accompagnement savoureux.', 50.00, 0, '../images/menu/frite-removebg-preview.png', 0, 4),
-(14, 'Salade', 'Salade fraîche composée de légumes de saison, fromage et vinaigrette maison pour une option légère et savoureuse.', 200.00, 0, '../images/menu/salad1-removebg-preview.png', 7, 5),
-(15, 'Salade des légumes', 'Mélange croquant de légumes frais avec olives et vinaigrette légère pour une entrée rafraîchissante et équilibrée.', 100.00, 0, '../images/menu/salad-removebg-preview.png', 2, 5),
-(16, 'Salade de poulet', 'Salade complète avec poulet tendre, légumes croquants et sauce onctueuse pour un repas léger et nourrissant.', 200.00, 0, '../images/menu/salad2-removebg-preview.png', 10, 5),
-(17, 'Pizza', 'Pizza classique avec sauce tomate, fromage fondant et olives pour une saveur méditerranéenne authentique.', 170.00, 0, '../images/menu/f3.png', 0, 2),
-(18, 'Frites de patates', 'Frites maison coupées à la main et cuites à la perfection pour un accompagnement croustillant et savoureux.', 70.00, 0, '../images/menu/frite-removebg-preview (1).png', 15, 4),
-(19, 'Spicy penne Pasta', 'Pâtes penne relevées avec une sauce épicée et des herbes fraîches pour les amateurs de saveurs intenses.', 180.00, 0, '../images/menu/pasta-removebg-preview.png', 0, 3),
-(20, 'Frite', 'Frites classiques croustillantes à l\'extérieur et moelleuses à l\'intérieur, parfaites pour accompagner vos plats.', 40.00, 0, '../images/menu/f5.png', 0, 4),
-(21, 'Pizza mixte', 'Pizza généreusement garnie de divers ingrédients pour satisfaire toutes les envies en une seule bouchée.', 150.00, 0, '../images/menu/f6.png', 0, 2),
-(22, 'Burger au poulet', 'Burger savoureux avec filet de poulet croustillant, légumes frais et sauce maison dans un pain moelleux.', 120.00, 0, '../images/menu/f7.png', 0, 1),
-(23, 'Burger Tex-Mex', 'Burger épicé avec viande assaisonnée, fromage fondu et garnitures tex-mex pour une explosion de saveurs.', 140.00, 0, '../images/menu/f8.png', 3, 1),
-(24, 'Spaghetti alla Caprese', 'Spaghetti avec sauce tomate fraîche, mozzarella et basilic pour un classique italien simple et délicieux.', 100.00, 0, '../images/menu/f9.png', 0, 3);
+INSERT INTO `menu_items` (`id`, `name`, `description`, `price`, `discount`, `image_url`, `sales_count`, `category_id`, `created_at`) VALUES
+(1, 'Pizza aux Fruits de Mer', 'La Pizza aux Fruits de Mer est une pizza savoureuse garnie d’une sauce tomate parfumée, d’un mélange de crevettes, calamars et moules sautés à l’ail, et recouverte de fromage fondant.', 200.00, 10, '../images/menu/f1.png', 150, 2, '2025-04-24 00:30:00'),
+(2, 'Burger Maison', 'Le Burger Maison est un savoureux burger avec un steak de bœuf haché juteux dans un pain moelleux, garni de fromage cheddar, de rondelles de tomate.', 150.00, 30, '../images/menu/f2.png', 200, 1, '2025-04-22 00:30:00'),
+(3, 'Pizza Napolitaine', 'La Pizza Napolitaine est une pizza traditionnelle à pâte fine, garnie de sauce tomate San Marzano, de mozzarella di bufala, de basilic frais et d\'huile d\'olive.', 170.00, 12, '../images/menu/f3.png', 0, 2, '2025-04-24 00:30:00'),
+(4, 'Homemade Vegan Burgers', 'Homemade Vegan Burgers sont des burgers savoureux à base de haricots noirs ou de pois chiches écrasés, mélangés avec des flocons d\'avoine, des oignons, de l\'ail et des carottes', 120.00, 0, '../images/menu/f7.png', 9, 1, '2025-04-22 00:30:00'),
+(5, 'Burger Fusion au Curry', 'Le Chicken Curry Delight Burger est un burger savoureux avec un poulet pané au curry, servi dans un pain moelleux avec une sauce au yaourt, de la salade, des tomates et de la coriandre.', 140.00, 4, '../images/menu/f7.png', 0, 1, '2025-04-21 00:30:00'),
+(6, 'Buttery Tomato Pasta', 'Le Buttery Tomato Pasta est un plat de pâtes savoureux préparé avec des pâtes al dente enrobées de beurre, de tomates cerises sautées à l\'ail, de basilic frais et de parmesan.', 100.00, 0, '../images/menu/f9.png', 0, 4, '2025-04-22 00:30:00'),
+(7, 'Burger BBQ recipe', 'Le Burger BBQ est fait de steak de bœuf, fromage cheddar, sauce BBQ, bacon, oignons caramélisés, cornichons, tomates et salade, le tout dans un pain à burger. C\'est un burger savoureux et généreux, parfait pour les amateurs de BBQ.', 130.00, 15, '../images/menu/Coffee-Rubbed-Burgers-with-BBQ-Sauce.jpg', 1, 1, '2025-04-22 00:30:00'),
+(8, 'Barbecue Bacon Burger', 'Le Barbecue Bacon Burger est un burger garni de bacon croustillant, de viande hachée de bœuf, de fromage fondant, de salade, de tomates, et d\'oignons, le tout nappé d\'une sauce barbecue. Il est servi dans un pain burger classique.', 235.00, 8, '../images/menu/delicious-classic-beef-burger-with-cherry-tomatoes_23-2148290641.avif', 10, 1, '2025-04-22 00:30:00'),
+(9, 'Donner burger BBQ', 'Le Donner Burger est un burger inspiré du Doner Kebab, composé de viande grillée (souvent de l\'agneau, du poulet ou du bœuf), de légumes frais comme la salade, les tomates et les oignons, avec des sauces (blanche et pimentée). Il est servi dans un pain burger ou pita, et parfois avec du fromage selon les préférences.', 180.00, 0, '../images/menu/bbq-burger-980x653.webp', 3, 1, '2025-04-22 00:30:00'),
+(11, 'Pasta al limone', 'Pâtes légères et rafraîchissantes avec une sauce crémeuse au citron, parmesan et herbes fraîches pour une touche d’élégance.', 200.00, 0, '../images/menu/pasta1-removebg-preview.png', 0, 3, '2025-04-22 00:30:00'),
+(12, 'Burger', 'Burger gourmet avec filet de poulet croustillant, légumes frais et sauce maison dans un pain brioche moelleux.', 150.00, 0, '../images/menu/f2.png', 0, 1, '2025-04-15 00:30:00'),
+(13, 'Frite à l\'ail', 'Frites dorées et croustillantes parfumées à l\'ail frais et saupoudrées de persil pour un accompagnement savoureux.', 50.00, 0, '../images/menu/frite-removebg-preview.png', 0, 4, '2025-04-22 00:30:00'),
+(14, 'Salade', 'Salade fraîche composée de légumes de saison, fromage et vinaigrette maison pour une option légère et savoureuse.', 200.00, 0, '../images/menu/salad1-removebg-preview.png', 7, 5, '2025-04-22 00:30:00'),
+(15, 'Salade des légumes', 'Mélange croquant de légumes frais avec olives et vinaigrette légère pour une entrée rafraîchissante et équilibrée.', 100.00, 0, '../images/menu/salad-removebg-preview.png', 2, 5, '2025-04-22 00:30:00'),
+(16, 'Salade de poulet', 'Salade complète avec poulet tendre, légumes croquants et sauce onctueuse pour un repas léger et nourrissant.', 200.00, 0, '../images/menu/salad2-removebg-preview.png', 10, 5, '2025-04-22 00:30:00'),
+(17, 'Pizza', 'Pizza classique avec sauce tomate, fromage fondant et olives pour une saveur méditerranéenne authentique.', 170.00, 0, '../images/menu/f3.png', 0, 2, '2025-04-24 00:30:00'),
+(18, 'Frites de patates', 'Frites maison coupées à la main et cuites à la perfection pour un accompagnement croustillant et savoureux.', 70.00, 0, '../images/menu/frite-removebg-preview (1).png', 15, 4, '2025-04-22 00:30:00'),
+(19, 'Spicy penne Pasta', 'Pâtes penne relevées avec une sauce épicée et des herbes fraîches pour les amateurs de saveurs intenses.', 180.00, 0, '../images/menu/pasta-removebg-preview.png', 0, 3, '2025-04-22 00:30:00'),
+(20, 'Frite', 'Frites classiques croustillantes à l\'extérieur et moelleuses à l\'intérieur, parfaites pour accompagner vos plats.', 40.00, 0, '../images/menu/f5.png', 0, 4, '2025-04-22 00:30:00'),
+(21, 'Pizza mixte', 'Pizza généreusement garnie de divers ingrédients pour satisfaire toutes les envies en une seule bouchée.', 150.00, 0, '../images/menu/f6.png', 0, 2, '2025-04-22 00:30:00'),
+(22, 'Burger au poulet', 'Burger savoureux avec filet de poulet croustillant, légumes frais et sauce maison dans un pain moelleux.', 120.00, 0, '../images/menu/f7.png', 0, 1, '2025-04-22 00:30:00'),
+(23, 'Burger Tex-Mex', 'Burger épicé avec viande assaisonnée, fromage fondu et garnitures tex-mex pour une explosion de saveurs.', 140.00, 0, '../images/menu/f8.png', 3, 1, '2025-04-22 00:30:00'),
+(24, 'Spaghetti alla Caprese', 'Spaghetti avec sauce tomate fraîche, mozzarella et basilic pour un classique italien simple et délicieux.', 100.00, 0, '../images/menu/f9.png', 0, 3, '2025-04-22 00:30:00');
 
 --
 -- Triggers `menu_items`
